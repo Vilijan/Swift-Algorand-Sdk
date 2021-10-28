@@ -47,32 +47,12 @@ public class AssetCreateTransactionBuilder: TransactionBuilder<AssetCreateTransa
         var params = try!  AssetParams(assetTotal: self.assetTotal, assetDecimals: self.assetDecimals ?? 0, assetDefaultFrozen: self.defaultFrozen ?? false, assetUnitName: self.assetUnitName, assetName: self.assetName, url: self.url, metadataHash: self.metadataHash, assetManager: self.manager, assetReserve: self.reserve, assetFreeze: self.freeze, assetClawback: self.clawback);
         
         txn.assetParams = params;
-//        print(txn.assetParams?.assetDecimals)
-//        print("Assset ffrozen")
     }
 
     public func setAssetTotal(assetTotal:Int64) ->AssetCreateTransactionBuilder{
         self.assetTotal = assetTotal;
         return self;
     }
-
-//    public func setAssetTotal(assetTotal:Int64)throws ->AssetCreateTransactionBuilder {
-//        if (assetTotal < 0) {
-//            throw Errors.illegalArgumentError("assetTotal cannot be a negative value");
-//        } else {
-//            self.assetTotal = assetTotal;
-//            return self;
-//        }
-//    }
-//
-//    public func setAssetTotal(assetTotal:Int64) throws->AssetCreateTransactionBuilder{
-//        if assetTotal < 0{
-//            throw Errors.illegalArgumentError("assetTotal cannot be a negative value");
-//        } else {
-//            self.assetTotal = assetTotal;
-//            return self;
-//        }
-//    }
 
     public func setAssetDecimals(assetDecimals:Int64)->AssetCreateTransactionBuilder {
         self.assetDecimals = assetDecimals;

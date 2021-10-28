@@ -10,11 +10,6 @@ public class AssetParams: Codable,Equatable {
     public init(assetTotal: Int64?, assetDecimals: Int64?, assetDefaultFrozen: Bool?, assetUnitName: String?, assetName: String?, url: String? , metadataHash: [Int8]?, assetManager: Address? , assetReserve: Address?, assetFreeze: Address?, assetClawback: Address? ) throws {
         
         
-        if let aDecimals = assetDecimals {
-            if (aDecimals < 0 || aDecimals > 19) {
-                throw Errors.runtimeError("assetDecimals cannot be less than 0 or greater than 19")
-            }
-               }
 
                if let aUnitName = assetUnitName {
                    if (aUnitName.count > 8) {
@@ -30,13 +25,7 @@ public class AssetParams: Codable,Equatable {
                    }
                }
 
-               if let ul = url {
-                   if (ul.count > 32) {
-                    throw Errors.runtimeError("asset url cannot be greater than 32 characters")
-                   }
-               }
-
-       
+        
                if let mDataHash = metadataHash {
                    if (mDataHash.count > 32) {
                     throw Errors.runtimeError("asset metadataHash cannot be greater than 32 bytes")
