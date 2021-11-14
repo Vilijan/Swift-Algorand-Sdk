@@ -6,10 +6,7 @@ import PackageDescription
 let package = Package(
     name: "swift-algorand-sdk",
     platforms: [
-          .macOS(.v10_12),
-           .iOS(.v10),
-           .tvOS(.v10),
-           .watchOS(.v3)
+          .iOS(.v13)
       ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
